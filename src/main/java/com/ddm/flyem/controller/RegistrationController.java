@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/registration")
+@RequestMapping("/api/register")
 public class RegistrationController {
     private RegistrationService registrationService;
 
@@ -18,7 +18,7 @@ public class RegistrationController {
         this.registrationService = registrationService;
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping
     private User register(@RequestBody RegistrationDto registrationDto) {
         if(!registrationService.isEmailUnique(registrationDto)) {
             throw new IllegalArgumentException("Email already used!");

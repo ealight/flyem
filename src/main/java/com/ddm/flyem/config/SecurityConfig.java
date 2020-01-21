@@ -1,19 +1,31 @@
 package com.ddm.flyem.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 
 @Configuration
+@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
+                .antMatchers("/api/register**").permitAll()
+                .antMatchers("/api/healthcheck**").permitAll()
                 .antMatchers("/api/**").authenticated()
-                .antMatchers("/api/healthcheck", "/api/registration").permitAll()
                 .anyRequest().permitAll()
-                .and().formLogin()
-                .and().csrf().disable();
+            .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll()
+            .and()
+                .logout()
+                .permitAll()
+            .and()
+                .csrf().disable();
     }
 }
