@@ -1,15 +1,14 @@
 package com.ddm.flyem.dao;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Data
-@EqualsAndHashCode
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 @Entity(name = "user")
 public class User {
     @Id
