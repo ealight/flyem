@@ -1,2 +1,5 @@
-<h1>Hello World</h1>
-<h1>{{textFromResponse}}</h1>
+<mat-toolbar color="primary">
+  <button mat-flat-button color="accent" [routerLink]="['login']">Login</button>
+  <button mat-flat-button color="accent" [routerLink]="['profile']">Profile</button>
+</mat-toolbar>
+<router-outlet></router-outlet>
