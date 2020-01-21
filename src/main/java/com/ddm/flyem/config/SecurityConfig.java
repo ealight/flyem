@@ -10,8 +10,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .antMatchers("/api/healthcheck").permitAll()
                 .antMatchers("/api/**").authenticated()
+                .antMatchers("/api/healthcheck", "/api/registration").permitAll()
                 .anyRequest().permitAll()
                 .and().formLogin()
                 .and().csrf().disable();
