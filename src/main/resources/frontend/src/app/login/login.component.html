@@ -1,5 +1,15 @@
-<form action="/loginProcess" method="post">
-  <input type="text" name="username">
-  <input type="password" name="password">
-  <input type="submit" value="Login">
-</form>
+<div class="container">
+  <h1>Sing In</h1>
+  <form action="/loginProcess" method="post" class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="User Name" name="username">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput type="password" placeholder="Password" name="password">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <button mat-stroked-button type="submit">Sign In</button>
+    </mat-form-field>
+  </form>
+</div>

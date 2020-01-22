@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {ProfileModule} from "./profile/profile.module";
 import { RegistrationComponent } from './registration/registration.component';
 import {RegistrationModule} from "./registration/registration.module";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -21,17 +22,18 @@ import {RegistrationModule} from "./registration/registration.module";
     ProfileComponent,
     RegistrationComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    LoginModule,
-    ProfileModule,
-    RegistrationModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        LoginModule,
+        ProfileModule,
+        RegistrationModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatInputModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

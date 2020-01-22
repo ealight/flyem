@@ -1,6 +1,8 @@
-<mat-toolbar color="primary">
-  <button mat-flat-button color="accent" [routerLink]="['login']">Login</button>
-  <button mat-flat-button color="accent" [routerLink]="['registration']">Register</button>
-  <button mat-flat-button color="accent" [routerLink]="['profile']">Profile</button>
+<mat-toolbar>
+  <nav>
+    <button mat-flat-button color="accent" [routerLink]="['login']">Login</button>
+    <button mat-flat-button color="accent" [routerLink]="['registration']">Register</button>
+    <button mat-flat-button color="accent" [routerLink]="['profile']">My Profile</button>
+  </nav>
 </mat-toolbar>
 <router-outlet></router-outlet>

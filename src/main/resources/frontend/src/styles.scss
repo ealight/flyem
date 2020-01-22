@@ -2,3 +2,40 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  padding: 150px 0;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+
+    .example-full-width {
+      input {
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid #9b9b9b;
+        outline: 0;
+        font-size: 1.3rem;
+        padding: 7px 0;
+        background: transparent;
+        transition: border-color 0.2s;
+
+        &::placeholder {
+          color: #000;
+        }
+      }
+
+      button {
+        font-size: 1.3rem;
+        padding: 7px 0;
+        border: 1px solid #000;
+        width: 100%;
+      }
+    }
+  }
+}
