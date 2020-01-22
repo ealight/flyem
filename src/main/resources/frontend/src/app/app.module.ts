@@ -11,18 +11,22 @@ import { LoginComponent } from './login/login.component';
 import {LoginModule} from "./login/login.module";
 import { ProfileComponent } from './profile/profile.component';
 import {ProfileModule} from "./profile/profile.module";
+import { RegistrationComponent } from './registration/registration.component';
+import {RegistrationModule} from "./registration/registration.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
     ProfileModule,
+    RegistrationModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
