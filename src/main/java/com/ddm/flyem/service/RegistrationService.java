@@ -5,10 +5,11 @@ import com.ddm.flyem.dto.RegistrationDto;
 
 public interface RegistrationService {
 
-    User save(RegistrationDto registrationDto);
+    User registerUser(RegistrationDto registrationDto);
 
     boolean isEmailUnique(RegistrationDto dto);
 
     boolean isUsernameUnique(RegistrationDto dto);
 
+    boolean confirmEmail(String token);
 }

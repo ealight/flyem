@@ -1,6 +1,6 @@
 package com.ddm.flyem.controller;
 
-import com.ddm.flyem.convertor.UserConverter;
+import com.ddm.flyem.converter.UserConverter;
 import com.ddm.flyem.domain.FlyemUserDetails;
 import com.ddm.flyem.dto.UserDto;
 import org.springframework.security.core.context.SecurityContextHolder;

@@ -1,4 +1,4 @@
-package com.ddm.flyem.convertor;
+package com.ddm.flyem.converter;
 
 import com.ddm.flyem.dao.User;
 import com.ddm.flyem.dto.UserDto;

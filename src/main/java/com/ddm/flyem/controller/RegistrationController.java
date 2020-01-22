@@ -3,9 +3,8 @@ package com.ddm.flyem.controller;
 import com.ddm.flyem.dao.User;
 import com.ddm.flyem.dto.RegistrationDto;
 import com.ddm.flyem.service.RegistrationService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/register")
@@ -24,7 +23,18 @@ public class RegistrationController {
         if (!registrationService.isUsernameUnique(registrationDto)) {
             throw new IllegalArgumentException("Username already used!");
         }
-        return registrationService.save(registrationDto);
+        return registrationService.registerUser(registrationDto);
+    }
+
+    @GetMapping("/confirmEmail/{token}")
+    private ResponseEntity<String> confirmEmail(@PathVariable String token) {
+        boolean isEmailConfirmed = registrationService.confirmEmail(token);
+
+        if(!isEmailConfirmed) {
+            return ResponseEntity.badRequest().body("Bad token");
+        }
+
+        return ResponseEntity.ok("Email successfully confirmed!");
     }
 
 }
