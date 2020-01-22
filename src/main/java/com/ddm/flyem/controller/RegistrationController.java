@@ -3,9 +3,7 @@ package com.ddm.flyem.controller;
 import com.ddm.flyem.dao.User;
 import com.ddm.flyem.dto.RegistrationDto;
 import com.ddm.flyem.service.RegistrationService;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,11 +17,11 @@ public class RegistrationController {
     }
 
     @PostMapping
-    private User register(@RequestBody RegistrationDto registrationDto) {
-        if(!registrationService.isEmailUnique(registrationDto)) {
+    private User register(RegistrationDto registrationDto) {
+        if (!registrationService.isEmailUnique(registrationDto)) {
             throw new IllegalArgumentException("Email already used!");
         }
-        if(!registrationService.isUsernameUnique(registrationDto)) {
+        if (!registrationService.isUsernameUnique(registrationDto)) {
             throw new IllegalArgumentException("Username already used!");
         }
         return registrationService.save(registrationDto);
