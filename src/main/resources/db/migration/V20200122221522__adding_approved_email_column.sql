@@ -1,0 +1,1 @@
+ALTER TABLE `user` add `email_approved` BOOLEAN DEFAULT FALSE;

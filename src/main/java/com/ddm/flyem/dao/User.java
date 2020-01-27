@@ -23,4 +23,14 @@ public class User {
 
     @Column
     private String email;
+
+    @Column(name = "email_approved")
+    private Boolean emailApproved;
+
+    @PrePersist
+    private void prePersist(){
+        if(emailApproved == null) {
+            emailApproved = false;
+        }
+    }
 }
