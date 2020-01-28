@@ -47,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/register/confirmEmail/*").permitAll()
                 .antMatchers("/api/healthcheck**").permitAll()
                 .antMatchers("/api/**").authenticated()
+                .antMatchers("/ws/**").authenticated()
                 .anyRequest().permitAll()
             .and()
                 .formLogin()
