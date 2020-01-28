@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let message of messages">
+    {{message.author}}:{{message.text}}
+  </li>
+</ul>
+<input type="textarea" [(ngModel)]="currentMessage"/>
+<button (click)="sendMessage()">Go</button>
