@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {User, UserService} from "../service/user.service";
 
 @Component({
   selector: 'app-profile',
@@ -11,24 +12,15 @@ import {Router} from "@angular/router";
 
 
 export class ProfileComponent implements OnInit {
-  profileData: User = {};
+  profileData: User = new User();
 
-  constructor(private http: HttpClient,
+  constructor(private userService : UserService,
               private router: Router) { }
 
   ngOnInit() {
-    this.http.get<User>("/api/user").subscribe(response => {
+    this.userService.getCurrentUser().subscribe(response => {
       this.profileData = response;
-    },
-      error => {
-        console.log(error);
-        this.router.navigate(['/login']);
-      });
+    })
   }
 
-}
-
-class User {
-  constructor(public username?: string,
-              public email?: string) { }
 }

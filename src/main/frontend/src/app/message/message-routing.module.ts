@@ -5,7 +5,7 @@ import {MessageComponent} from "./message.component";
 
 const routes: Routes = [
   {
-    path: "message",
+    path: "message/:token",
     component: MessageComponent
   }
 ];
